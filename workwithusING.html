@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daisy & Partners - Work With Us</title>
+    <script src="https://kit.fontawesome.com/8d7e2d832c.js" crossorigin="anonymous"></script>
+    <!-- Link al foglio di stile di Tailwind CSS (sostituiscilo con il tuo percorso o CDN) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+        body {
+            background-color: #f8f9fa;
+            font-family: "Poppins", sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            color: #fff;
+            z-index: 999;
+            position: fixed;
+            width: 100%;
+            height: calc(4rem + 1rem);
+            top: 0;
+            left: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            transition: 0.5s ease;
+            transition-property: height, background;
+            background: rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(50px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        header h1 {
+            font-weight: bold;
+            font: 90px;
+        }
+
+        .fullpage {
+            padding-top: 100px;
+            padding-bottom: 50px;
+            height: fit-content;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .form-wwu {
+            position: relative;
+            max-width: 600px;
+            width: 600px;
+            margin: 80px auto;
+            padding: 30px;
+            margin: 30px;
+            background-color: #ffffff;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+            
+        label {
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        input, select, button {
+            width: 100%;
+            padding: 0.75rem;
+            margin-bottom: 1rem;
+            box-sizing: border-box;
+            border: 1px solid #ced4da;
+            border-radius: 0.25rem;
+        }
+
+        /* Stile personalizzato per il pulsante "sfoglia" */
+        .custom-file-container {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .custom-file-upload {
+            border: 1px solid #ced4da;
+            padding: 0.75rem;
+            text-align: center;
+            border-radius: 0.25rem;
+            cursor: pointer;
+            background-color: #08a98a;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: 0.4s ease;
+        }
+
+        .custom-file-upload:hover {
+            background-color: #057f66;
+        }
+
+        .custom-file-upload i {
+            margin-right: 0.5rem;
+        }
+
+        .custom-file-input {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            opacity: 0;
+            width: 100%;
+            cursor: pointer;
+        }
+
+        .file-name {
+            margin-left: 1rem;
+            font-size: 14px;
+            color: #6b7280;
+        }
+
+        #submitBtn {
+            background-color: #08a98a;
+            color: #ffffff;
+            cursor: pointer;
+            transition: 0.4s ease;
+        }
+
+        #subitBtn:hover {
+            opacity: 0.7;
+        }
+        
+        .container{
+            max-width: 1170px;
+            margin:auto;
+        }
+
+        .row{
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        ul{
+            list-style: none;
+        }
+
+        .footer{
+            background-color: #24262b;
+            padding-top: 70px;
+            padding-bottom: 0px;
+        }
+
+        .footer-col {
+            width: 25%;
+            padding: 0 15px;
+        }
+
+        .footer-col:nth-child(1), .footer-col:nth-child(3) {
+            width: 20%;
+        }
+
+        .footer-col h4{
+            font-size: 18px;
+            color: #ffffff;
+            text-transform: capitalize;
+            margin-bottom: 35px;
+            font-weight: 500;
+            position: relative;
+        }
+
+        .footer-col h4::before {
+            content: '';
+            position: absolute;
+            left:0;
+            bottom: -10px;
+            background-color: #08a98a;
+            height: 2px;
+            box-sizing: border-box;
+            width: 50px;
+        }
+
+        .footer-col ul li:not(:last-child) {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a{
+            font-size: 16px;
+            text-transform: capitalize;
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 300;
+            color: #bbbbbb;
+            display: block;
+            transition: all 0.3s ease;
+        }
+
+        #noDecorationLink {
+            text-transform: lowercase;
+        }
+
+        .footer-col ul li a:hover {
+            color: #ffffff;
+            padding-left: 8px;
+        }
+
+        .footer-col .social-links a {
+            display: inline-block;
+            height: 40px;
+            width: 40px;
+            background-color: rgba(255,255,255,0.2);
+            margin:0 10px 10px 0;
+            text-align: center;
+            line-height: 40px;
+            border-radius: 50%;
+            color: #ffffff;
+            transition: all 0.5s ease;
+        }
+
+        .footer-col .social-links a:hover {
+            color: #fff;
+            background-color: #08a98a;
+        }
+
+        .developer {
+            padding-top: 20px;
+            padding-left: 15px;
+        }
+
+        .developer p {
+            color: #cfcdcd;
+        }
+
+        .developer a {
+            font-weight: bold;
+            text-decoration: none;
+            color: #fff;
+            transition: 0.4s ease;
+        }
+
+        .developer a:hover {
+            opacity: 0.7;
+        }
+
+        .sezionelogo {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .sezionelogo img {
+            height: 230px;
+        }
+
+        @media screen and (max-width: 1219px) {
+            .row {
+                padding-left: 30px;
+            }
+            .footer-col {
+                width: 25%;
+                padding: 0 10px;
+            }
+            .footer-col:nth-child(1),
+            .footer-col:nth-child(3) {
+                width: fit-content;
+            }
+            .developer {
+                padding-left: 10px;
+            }
+        }
+
+        @media screen and (max-width: 767px) {
+            .footer-col {
+                width: 100%;
+                margin-bottom: 30px;
+            }
+            .footer-col:nth-child(2) {
+                width: 100%;
+                margin-right: 0;
+            }
+            .developer {
+                padding-left: 0;
+            }
+        }
+
+        @media screen and (max-width: 574px) {
+            .row {
+                padding-left: 15px;
+            }
+            .footer-col {
+                margin-bottom: 20px;
+            }
+            .developer {
+                padding-left: 15px;
+                padding-right: 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1 class="text-3xl font-bold">Join Our Team</h1>
+    </header>
+
+    <section class="fullpage">
+        <section class="form-wwu">
+            <h2 class="text-2xl mb-4">Available Positions</h2>
+            <form action="https://formsubmit.co/daisyzaniagency@gmail.com" method="POST" enctype="multipart/form-data" id="applicationForm">
+                <div class="mb-2">
+                    <label for="position">Position:</label>
+                    <select id="position" name="position" class="border p-2" required>
+                        <option value="" disabled selected>Select a position</option>
+                        <option value="Hostess">Hostess</option>
+                        <option value="Interpreters">Interpreters</option>
+                        <option value="Models">Models</option>
+                        <option value="Catering">Catering</option>
+                        <option value="Fitters">Fitters</option>
+                        <option value="Musicians">Musicians</option>
+                        <option value="Djs">Djs</option>
+                        <option value="Photographers">Photographers</option>
+                        <option value="Videomaker">Videomaker</option>
+                    </select>
+                </div>
+
+                <div class="mb-2">
+                    <label for="name">Name and Surname:</label>
+                    <input type="text" id="name" name="name" class="border p-2" required>
+                </div>
+
+                <div class="mb-2">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" class="border p-2" required>
+                </div>
+
+                <div class="mb-2">
+                    <label for="resume">Upload Resume (PDF only):</label>
+                    <div class="custom-file-container">
+                        <label for="file-upload" class="custom-file-upload">
+                            <i class="fa fa-cloud-upload"></i> Browse
+                        </label>
+                        <input type="file" id="file-upload" name="attachment" accept=".pdf" class="custom-file-input" required>
+                        <!--<input type="file" id="file-upload" name="attachment" accept=".pdf" class="custom-file-input" required>-->
+                        <span class="file-name">No file selected</span>
+                    </div>
+                </div>
+
+                <input type="hidden" name="_next" value="https://daisyandpartners.github.io/daisyandpartners/thanksING.html">
+
+                <button type="submit" class="bg-blue-500 text-white p-2 rounded" id="submitBtn">Submit Application</button>
+            </form>
+        </section>
+    </section>
+    
+    <footer class="footer" id="contatti-page">
+        <div class="container">
+            <div class="row">
+                <div class="footer-col">
+                    <h4>Daisy & Partners</h4>
+                    <ul>
+                        <li><a href="./indexING.html">home</a></li>
+                        <li><a href="./indexING.html">about us</a></li>
+                        <li><a href="./indexING.html">other services</a></li>
+                        <li><a href="./indexING.html">gallery</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>contacts</h4>
+                    <ul>
+                        <li><a id="noDecorationLink" href="mailto:daisyzaniagency@gmail.com" target="_blank">daisyzaniagency@gmail.com</a></li>
+                        <li><a href="tel:+39 345 974 2231">Tel: +39 345 974 2231</a></li>
+                        <li><a href="#">P.IVA 04509130987</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Other</h4>
+                    <ul>
+                        <li><a href="./workwithusING.html">work with us</a></li>
+                        <li><a href="https://www.iubenda.com/privacy-policy/84229056" class="iubenda-white iubenda-noiframe iubenda-embed iubenda-noiframe " title="Privacy Policy ">Privacy Policy</a><script type="text/javascript">(function (w,d) {var loader = function () {var s = d.createElement("script"), tag = d.getElementsByTagName("script")[0]; s.src="https://cdn.iubenda.com/iubenda.js"; tag.parentNode.insertBefore(s,tag);}; if(w.addEventListener){w.addEventListener("load", loader, false);}else if(w.attachEvent){w.attachEvent("onload", loader);}else{w.onload = loader;}})(window, document);</script></li>
+                        <li><a href="https://www.iubenda.com/privacy-policy/84229056/cookie-policy" class="iubenda-white iubenda-noiframe iubenda-embed iubenda-noiframe " title="Cookie Policy ">Cookie Policy</a><script type="text/javascript">(function (w,d) {var loader = function () {var s = d.createElement("script"), tag = d.getElementsByTagName("script")[0]; s.src="https://cdn.iubenda.com/iubenda.js"; tag.parentNode.insertBefore(s,tag);}; if(w.addEventListener){w.addEventListener("load", loader, false);}else if(w.attachEvent){w.attachEvent("onload", loader);}else{w.onload = loader;}})(window, document);</script></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>follow us</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    </div>
+                </div>
+                <div class="developer">
+                    <p>Developed by <a href="https://www.instagram.com/wdm.corp/" target="_blank">WDM - Web Development & Management</a></p>
+                </div>
+            </div>
+        </div>
+        <div class="sezionelogo">
+            <img src="./images/logo-removebg-preview.png" alt="">
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById("file-upload").addEventListener("change", function () {
+            var fileName = this.files[0].name;
+            document.querySelector(".file-name").innerText = fileName;
+        });
+    </script>
+</body>
+</html>
+
+
+
