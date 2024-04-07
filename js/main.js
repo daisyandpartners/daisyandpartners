@@ -10,7 +10,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
 
 // Swiper slider
-var swiper = new Swiper(".bg-slider-thumbs", {
+/*var swiper = new Swiper(".bg-slider-thumbs", {
     loop: true,
     spaceBetween: 0,
     slidesPerView: 0,
@@ -19,6 +19,7 @@ var swiper = new Swiper(".bg-slider-thumbs", {
         disableOnInteraction: false, // Impedisce l'interruzione dell'autoplay quando l'utente interagisce con lo slider
     },
 });
+
 
 var swiper2 = new Swiper(".bg-slider", {
     loop: true,
@@ -29,6 +30,19 @@ var swiper2 = new Swiper(".bg-slider", {
     autoplay: {
         delay: 10000, // La durata di visualizzazione di ogni slide in millisecondi (es. 5000ms = 5 secondi)
         disableOnInteraction: false, // Impedisce l'interruzione dell'autoplay quando l'utente interagisce con lo slider
+    },
+});*/
+
+var swiper = new Swiper(".bg-slider", {
+    loop: true,
+    spaceBetween: 0,
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+    },
+    autoplay: {
+        delay: 10000,
+        disableOnInteraction: false,
     },
 });
 
