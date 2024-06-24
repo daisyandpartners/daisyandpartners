@@ -522,7 +522,7 @@ header .nav-bar {
 .image-grid, .image-grid2 {
     --gap: 16px; /*variabile*/
     --num-cols: 4; /*variabile*/
-    --row-height: 300px; /*variabile*/
+    --row-height: 390px; /*variabile*/
     box-sizing: border-box;
     padding: var(--gap);
     display: grid;
