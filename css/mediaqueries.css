@@ -1,4 +1,4 @@
-@media screen and (max-width: 1400px) {
+@media screen and (max-width: 1500px) {
     header .nav-bar {
         padding: 25px 20px;
     }
@@ -190,6 +190,9 @@
 }
 
 @media screen and (max-width: 574px) {
+    .nav-bar .logo {
+        font-size: 1em;
+    }
     .row {
         padding-left: 15px;
     }
